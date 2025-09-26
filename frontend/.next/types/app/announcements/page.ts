@@ -1,4 +1,4 @@
-// File: D:\Dev\football_school\frontend\src\app\announcements\page.tsx
+// File: /home/barisariburnu/workspace/sporweb/frontend/src/app/announcements/page.tsx
 import * as entry from '../../../../src/app/announcements/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

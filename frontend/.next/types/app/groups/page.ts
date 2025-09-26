@@ -1,4 +1,4 @@
-// File: D:\Dev\football_school\frontend\src\app\groups\page.tsx
+// File: /home/barisariburnu/workspace/sporweb/frontend/src/app/groups/page.tsx
 import * as entry from '../../../../src/app/groups/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

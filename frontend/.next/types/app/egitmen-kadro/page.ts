@@ -1,4 +1,4 @@
-// File: D:\Dev\football_school\frontend\src\app\egitmen-kadro\page.tsx
+// File: /home/barisariburnu/workspace/sporweb/frontend/src/app/egitmen-kadro/page.tsx
 import * as entry from '../../../../src/app/egitmen-kadro/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
