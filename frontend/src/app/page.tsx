@@ -56,7 +56,7 @@ export default function Home() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/news');
+        const response = await fetch('http://localhost:5001/api/news');
         if (response.ok) {
           const data = await response.json();
           if (Array.isArray(data) && data.length > 0) {

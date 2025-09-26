@@ -1,9 +1,1 @@
-{
-  "app/test-api/page.tsx -> @/services/news.service": {
-    "id": 2265,
-    "files": [
-      "static/chunks/2651-f9f68b105ac8b395.js",
-      "static/chunks/2265.0580fc4a5f6cd7fa.js"
-    ]
-  }
-}
+{}
