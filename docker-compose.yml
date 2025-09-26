@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: football_school_mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: football_school
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - football_school_network
+
+  # Backend Service
+  backend:
+    build:
+      context: "./backend"
+      dockerfile: Dockerfile
+    container_name: football_school_backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - MONGODB_URI=mongodb://mongodb:27017/football_school
+      - JWT_SECRET=your-super-secret-jwt-key-here
+      - NODE_ENV=production
+    volumes:
+      - ./backend/uploads:/app/uploads
+    depends_on:
+      - mongodb
+    networks:
+      - football_school_network
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: football_school_frontend
+    restart: unless-stopped
+    ports:
+      - "3005:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:5000/api
+      - NEXT_PUBLIC_BASE_URL=http://localhost:5000
+      - NODE_ENV=production
+    depends_on:
+      - backend
+    networks:
+      - football_school_network
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  football_school_network:
+    driver: bridge
